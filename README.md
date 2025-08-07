@@ -54,16 +54,10 @@ Flowchart berikut menggambarkan alur kerja aplikasi secara umum:
 
 6. Akses project lewat browser:http://localhost/Aplikasi-Kegiatan-Sekolah
 
-##Role & Permission
+## 🔐 Role & Permission
 
-| Level   | Hak Akses                                                                 |
-|---------|---------------------------------------------------------------------------|
-| Admin   | - Kelola akun pengguna (CRUD user)  
-          - Kelola data guru, kelas, jenis kegiatan  
-          - Lihat semua laporan kegiatan  
-          - Full akses ke seluruh fitur aplikasi                                      |
-| Guru    | - Input & edit kegiatan harian sendiri  
-          - Lihat data kelas yang diajarkan  
-          - Lihat laporan kegiatan pribadi                                            |
-| Siswa   | - Melihat daftar kegiatan guru di kelasnya  
-          - Tidak bisa input, edit, atau hapus data                                   |
+| Level  | Hak Akses |
+|--------|-----------|
+| Admin  | - Kelola akun pengguna (CRUD user) <br> - Kelola data guru, kelas, jenis kegiatan <br> - Lihat semua laporan kegiatan <br> - Full akses ke seluruh fitur aplikasi |
+| Guru   | - Input & edit kegiatan harian sendiri <br> - Lihat data kelas yang diajarkan <br> - Lihat laporan kegiatan pribadi |
+| Siswa  | - Melihat daftar kegiatan guru di kelasnya <br> - Tidak bisa input, edit, atau hapus data |
