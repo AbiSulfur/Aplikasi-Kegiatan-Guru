@@ -17,7 +17,7 @@ Aplikasi ini merupakan project sederhana berbasis web yang bertujuan untuk mempe
 
 - PHP Native
 - MySQL
-- HTML + CSS + JavaScript
+- PHP + HTML + CSS
 - Bootstrap 5
 
 ---
