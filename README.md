@@ -26,7 +26,7 @@ Aplikasi ini merupakan project sederhana berbasis web yang bertujuan untuk mempe
 
 Berikut merupakan diagram relasi antar tabel dalam database:
 
-![ERD](https://github.com/username/repo-name/blob/main/Diagram/erd.png)
+![ERD](Basis_Data_App_Kegiatan_Guru.png)
 
 ---
 
