@@ -34,7 +34,7 @@ Berikut merupakan diagram relasi antar tabel dalam database:
 
 Flowchart berikut menggambarkan alur kerja aplikasi secara umum:
 
-![Flowchart](Flowchart-Aplikasi-Guru.drawio.png)
+![Flowchart](FLowchart_Aplikasi_Guru.drawio.png)
 
 ---
 
