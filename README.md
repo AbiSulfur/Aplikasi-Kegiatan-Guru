@@ -22,6 +22,12 @@ Aplikasi ini merupakan project sederhana berbasis web yang bertujuan untuk mempe
 
 ---
 
+## Use Case Diagram
+
+Berikut adalah Use Case Diagram untuk aplikasi:
+
+![ERD](Diagram_Use_Case.png)
+
 ## 📐 ERD (Entity Relationship Diagram)
 
 Berikut merupakan diagram relasi antar tabel dalam database:
