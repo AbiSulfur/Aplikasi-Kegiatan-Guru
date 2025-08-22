@@ -26,7 +26,7 @@ Aplikasi ini merupakan project sederhana berbasis web yang bertujuan untuk mempe
 
 Berikut adalah Use Case Diagram untuk aplikasi:
 
-![ERD](Diagram_Use_Case.png)
+![ERD](Diagram_Use_Case.drawio.png)
 
 ## 📐 ERD (Entity Relationship Diagram)
 
