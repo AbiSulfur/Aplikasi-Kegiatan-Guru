@@ -21,26 +21,31 @@ Aplikasi ini merupakan project sederhana berbasis web yang bertujuan untuk mempe
 - Bootstrap 5
 
 ---
+## 📃 Dokumentasi Aplikasi
 
-## Use Case Diagram
+### 📕 Use Case Diagram
 
 Berikut adalah Use Case Diagram untuk aplikasi:
 
-![ERD](Diagram_Use_Case.drawio.png)
+![Use-Case](Use_Case_Aplikasi_Guru.drawio.png)
 
-## 📐 ERD (Entity Relationship Diagram)
+### 📐 ERD (Entity Relationship Diagram)
 
 Berikut merupakan diagram relasi antar tabel dalam database:
 
 ![ERD](Basis_Data_App_Kegiatan_Guru.png)
 
----
-
-## 🔁 Flowchart Aplikasi
+### 🔁 Flowchart Aplikasi
 
 Flowchart berikut menggambarkan alur kerja aplikasi secara umum:
 
-![Flowchart](FLowchart_Aplikasi_Guru.drawio.png)
+![Flowchart](Flowchart_Aplikasi_Guru.drawio.png)
+
+### 📚 Activity Diagram
+
+Berikut ini adalah Activity Diagram dari Aplikasi Kegiatan Guru
+
+![Activity](Activity_Diagram_Aplikasi_Guru.drawio.png)
 
 ---
 
