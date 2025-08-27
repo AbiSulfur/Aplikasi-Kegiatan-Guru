@@ -25,7 +25,7 @@ Aplikasi ini merupakan project sederhana berbasis web yang bertujuan untuk mempe
 
 ### 📕 Use Case Diagram
 
-Berikut adalah Use Case Diagram untuk aplikasi:
+Berikut adalah Use Case Diagram untuk Aplikasi Kegiatan Guru:
 
 ![Use-Case](Use_Case_Aplikasi_Guru.drawio.png)
 
