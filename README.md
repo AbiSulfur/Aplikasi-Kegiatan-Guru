@@ -35,7 +35,7 @@ Sebuah aplikasi yang menggunakan template dari **Majestic Admin Dashboard**. Apl
 
 Berikut adalah pratinjau desain antarmuka aplikasi yang dirancang menggunakan Figma.
 
-![Tampilan Aplikasi]([https://www.figma.com/design/kKEC6aooGApoq2rJ27Ck7B/App-Kegiatan-Guru?node-id=0-1&t=aJGjsBzEgKevE8sT-1](https://www.figma.com/design/kKEC6aooGApoq2rJ27Ck7B/App-Kegiatan-Guru?node-id=0-1&t=aJGjsBzEgKevE8sT-1))
+![Figma]((https://www.figma.com/design/kKEC6aooGApoq2rJ27Ck7B/App-Kegiatan-Guru?node-id=29-3&t=aJGjsBzEgKevE8sT-1))
 
 ---
 
