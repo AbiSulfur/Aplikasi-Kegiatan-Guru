@@ -1,15 +1,15 @@
-﻿<div align="center">
+﻿<p align="center">
 
-# 📘 Aplikasi Manajemen Kegiatan Guru
+# Aplikasi Manajemen Kegiatan Guru
 
 [![Status](https://img.shields.io/badge/status-developing-blue.svg)]()
 [![License](https://img.shields.io/badge/license-MIT-green.svg)]()
 
 [![My Skills](https://skillicons.dev/icons?i=,figma,mysql,php)](https://skillicons.dev)
 
-Sebuah aplikasi yang menggunakan template dari **Majestic Admin Dashboard**. Aplikasi ini adalah sistem informasi berbasis web yang dirancang untuk mempermudah pencatatan, pengelolaan, dan pemantauan kegiatan guru di sekolah. Menggunakan sebuah **Role-Based Access**, untuk role-nya ada 3 role yang bisa digunakan, yaitu **Admin**, **Siswa**, **Guru**. 🚀
+Sebuah aplikasi yang menggunakan template dari **Majestic Admin Dashboard**. Aplikasi ini adalah sistem informasi berbasis web yang dirancang untuk mempermudah pencatatan, pengelolaan, dan pemantauan kegiatan guru di sekolah. Menggunakan sebuah **Role-Based Access**, untuk role-nya ada 3 role yang bisa digunakan, yaitu **Admin**, **Siswa**, **Guru**.
 
-﻿</div>
+﻿</p>
 
 ---
 
