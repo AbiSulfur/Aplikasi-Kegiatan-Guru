@@ -1,4 +1,4 @@
-﻿<p align="center">
+﻿<div align="center">
 
 # Aplikasi Manajemen Kegiatan Guru
 
@@ -9,7 +9,7 @@
 
 Sebuah aplikasi yang menggunakan template dari **Majestic Admin Dashboard**. Aplikasi ini adalah sistem informasi berbasis web yang dirancang untuk mempermudah pencatatan, pengelolaan, dan pemantauan kegiatan guru di sekolah. Menggunakan sebuah **Role-Based Access**, untuk role-nya ada 3 role yang bisa digunakan, yaitu **Admin**, **Siswa**, **Guru**.
 
-﻿</p>
+﻿</div>
 
 ---
 
