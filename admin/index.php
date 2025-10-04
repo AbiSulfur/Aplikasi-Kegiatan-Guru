@@ -1,14 +1,17 @@
+<?php
+include 'validation.php';
+include 'koneksi.php';
+
+requireAdmin();
+?>
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Aplikasi Kegiatan Guru - Admin</title>
-  <!-- Bootstrap CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
-  <!-- Custom CSS -->
   <style>
     :root {
       --sidebar-bg: #f8f9fa;
@@ -133,7 +136,6 @@
       color: var(--primary-color);
     }
     
-    /* Simplified metric card CSS for equal heights without breaking layout */
     .metric-card {
       background: white;
       border-radius: 0.75rem;
@@ -288,10 +290,17 @@
       <div class="d-flex align-items-center gap-2">
         <img src="/img/avatar.png" alt="Admin" class="user-avatar">
         <div class="d-flex flex-column justify-content-center">
-          <span class="fw-semibold text-dark" style="font-size: 0.875rem; line-height: 1.2;">Admin</span>
-          <span class="text-muted" style="font-size: 0.75rem; line-height: 1.2;">Administrator</span>
+          <!-- Display actual logged in user name and role -->
+          <span class="fw-semibold text-dark" style="font-size: 0.875rem; line-height: 1.2;"><?php echo $_SESSION['nama_lengkap']; ?></span>
+          <span class="text-muted" style="font-size: 0.75rem; line-height: 1.2;"><?php echo ucfirst($_SESSION['role']); ?></span>
         </div>
-        <i class="bi bi-chevron-down text-muted"></i>
+        <!-- Added logout dropdown -->
+        <div class="dropdown">
+          <i class="bi bi-chevron-down text-muted dropdown-toggle" data-bs-toggle="dropdown" style="cursor: pointer;"></i>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="logout.php"><i class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -301,37 +310,37 @@
   <div class="p-4">
     <ul class="nav flex-column">
       <li class="nav-item">
-        <a class="nav-link active" href="/index.php">
+        <a class="nav-link active" href="index.php">
           <i class="bi bi-house-door"></i>
           Dashboard
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/kegiatan.php">
+        <a class="nav-link" href="kegiatan.php">
           <i class="bi bi-calendar-event"></i>
           Kegiatan
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/guru.php">
+        <a class="nav-link" href="guru.php">
           <i class="bi bi-person-badge"></i>
           Guru
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/pages/kelas.php">
+        <a class="nav-link" href="kelas.php">
           <i class="bi bi-door-open"></i>
           Kelas
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/pages/jenis_kegiatan.php">
+        <a class="nav-link" href="user_validation.php">
           <i class="bi bi-tags"></i>
-          Jenis Kegiatan
+          Validation User
         </a>
       </li>
       <li class="nav-item mt-4">
-        <a class="nav-link" href="/pages/settings.php">
+        <a class="nav-link" href="settings.php">
           <i class="bi bi-gear"></i>
           Settings
         </a>
@@ -340,94 +349,147 @@
   </div>
 </aside>
 
+
+<main class="main-content">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+      <h2 class="fw-bold mb-1">Dashboard</h2>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="index.php" class="text-decoration-none">Dashboard</a></li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <?php
+  $q1 = mysqli_query($koneksi, "SELECT COUNT(*) as total FROM kegiatan_guru");
+  $jml_kegiatan = mysqli_fetch_assoc($q1)['total'] ?? 0;
+
+  $q2 = mysqli_query($koneksi, "SELECT COUNT(*) as total FROM users WHERE role='guru'");
+  $jml_guru = mysqli_fetch_assoc($q2)['total'] ?? 0;
+
+  $q3 = mysqli_query($koneksi, "SELECT COUNT(*) as total FROM users WHERE role='siswa'");
+  $jml_siswa = mysqli_fetch_assoc($q3)['total'] ?? 0;
+
+  $q4 = mysqli_query($koneksi, "SELECT COUNT(*) as total FROM kelas");
+  $jml_kelas = mysqli_fetch_assoc($q4)['total'] ?? 0;
+  ?>
+
+  <div class="row g-4 mb-4">
+    <div class="col-lg-3 col-md-6">
+      <div class="metric-card d-flex align-items-center gap-3">
+        <div class="metric-icon icon-purple">
+          <i class="bi bi-calendar-event"></i>
+        </div>
+        <div>
+          <h4 class="fw-bold mb-0"><?= $jml_kegiatan ?></h4>
+          <span class="text-muted">Total Kegiatan</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+      <div class="metric-card d-flex align-items-center gap-3">
+        <div class="metric-icon icon-green">
+          <i class="bi bi-person-badge"></i>
+        </div>
+        <div>
+          <h4 class="fw-bold mb-0"><?= $jml_guru ?></h4>
+          <span class="text-muted">Total Guru</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+      <div class="metric-card d-flex align-items-center gap-3">
+        <div class="metric-icon icon-blue">
+          <i class="bi bi-people"></i>
+        </div>
+        <div>
+          <h4 class="fw-bold mb-0"><?= $jml_siswa ?></h4>
+          <span class="text-muted">Total Siswa</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+      <div class="metric-card d-flex align-items-center gap-3">
+        <div class="metric-icon icon-orange">
+          <i class="bi bi-door-open"></i>
+        </div>
+        <div>
+          <h4 class="fw-bold mb-0"><?= $jml_kelas ?></h4>
+          <span class="text-muted">Total Kelas</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row g-4">
+    <div class="col-lg-6">
+      <div class="card shadow-sm border-0 h-100">
+        <div class="card-body">
+          <h5 class="card-title fw-bold">Grafik Kegiatan Bulanan</h5>
+          <canvas id="monthlyActivitiesChart" style="max-height: 300px;"></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="card shadow-sm border-0 h-100">
+        <div class="card-body">
+          <h5 class="card-title fw-bold">Aktivitas Terbaru</h5>
+          <div class="table-responsive">
+            <table class="table table-modern align-middle">
+              <thead>
+                <tr>
+                  <th>Judul Kegiatan</th>
+                  <th>Guru</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php
+                $sql = "SELECT kg.id_kegiatan, kg.tanggal, kg.laporan,
+                        u.nama_lengkap as guru, k.nama_kelas as kelas, j.nama_jenis as jenis
+                        FROM kegiatan_guru kg
+                        LEFT JOIN users u ON kg.id_user = u.id_user
+                        LEFT JOIN kelas k ON kg.id_kelas = k.id_kelas
+                        LEFT JOIN jenis_kegiatan j ON kg.id_jenis = j.id_jenis
+                        ORDER BY kg.tanggal DESC
+                        LIMIT 5";
+
+                $res = mysqli_query($koneksi, $sql);
+                if ($res && mysqli_num_rows($res) > 0) {
+                  while ($row = mysqli_fetch_assoc($res)) {
+                    $status = (strtotime($row['tanggal']) < time()) ? 'Selesai' : 'Berlangsung';
+                    $statusClass = ($status == 'Selesai') ? 'bg-success-subtle text-success' : 'bg-primary-subtle text-primary';
+                    echo '<tr>';
+                    echo '<td>'.htmlspecialchars(substr($row['laporan'],0,30)).'...</td>';
+                    echo '<td>'.$row['guru'].'</td>';
+                    echo '<td><span class="badge '.$statusClass.'">'.$status.'</span></td>';
+                    echo '</tr>';
+                  }
+                } else {
+                  echo '<tr><td colspan="3" class="text-center text-muted py-4">Belum ada kegiatan</td></tr>';
+                }
+                ?>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- Added Bootstrap JavaScript bundle for dropdown functionality -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    const navbar = document.getElementById('mainHeader');
-    const hoverZone = document.getElementById('navbarHoverZone');
-    const sidebar = document.getElementById('sidebar');
-    
-    let lastScrollTop = 0;
-    let hideTimeout;
-    let isScrolling = false;
-    let isHovered = false;
-    
-    function startHideTimer() {
-        clearTimeout(hideTimeout);
-        hideTimeout = setTimeout(() => {
-            if (!isHovered && !isScrolling) {
-                hideNavbar();
-            }
-        }, 4000);
-    }
-    
-    function showNavbar() {
-        navbar.classList.remove('navbar-hidden');
-        navbar.classList.add('navbar-visible');
-        hoverZone.classList.remove('active');
-        document.body.style.paddingTop = '70px';
-        if (sidebar) {
-            sidebar.style.top = '70px';
-        }
-    }
-    
-    function hideNavbar() {
-        navbar.classList.remove('navbar-visible');
-        navbar.classList.add('navbar-hidden');
-        hoverZone.classList.add('active');
-        document.body.style.paddingTop = '0';
-        if (sidebar) {
-            sidebar.style.top = '0';
-        }
-    }
-    
-    let scrollTimeout;
-    window.addEventListener('scroll', function() {
-        isScrolling = true;
-        clearTimeout(scrollTimeout);
-        
-        showNavbar();
-        
-        scrollTimeout = setTimeout(() => {
-            isScrolling = false;
-            startHideTimer();
-        }, 200);
-        
-        lastScrollTop = window.pageYOffset;
+    var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'));
+    var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
+        return new bootstrap.Dropdown(dropdownToggleEl);
     });
-    
-    hoverZone.addEventListener('mouseenter', function() {
-        isHovered = true;
-        showNavbar();
-        clearTimeout(hideTimeout);
-    });
-    
-    navbar.addEventListener('mouseenter', function() {
-        isHovered = true;
-        clearTimeout(hideTimeout);
-    });
-    
-    navbar.addEventListener('mouseleave', function() {
-        isHovered = false;
-        startHideTimer();
-    });
-    
-    startHideTimer();
-    
-    navbar.addEventListener('click', function() {
-        clearTimeout(hideTimeout);
-        startHideTimer();
-    });
-    
-    navbar.addEventListener('focus', function() {
-        clearTimeout(hideTimeout);
-    }, true);
-    
-    navbar.addEventListener('blur', function() {
-        startHideTimer();
-    }, true);
 });
 </script>
 
-<main class="main-content">
 </body>
 </html>

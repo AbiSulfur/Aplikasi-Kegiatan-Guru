@@ -1,11 +1,11 @@
-<?php include '../koneksi.php'; ?>
-<?php include '../includes/header.php'; ?>
+<?php include 'koneksi.php'; ?>
+<?php include 'header.php'; ?>
 
 <?php
 $id = intval($_GET['id'] ?? 0);
 if (!$id) {
   echo '<div class="alert alert-danger">ID tidak valid.</div>';
-  include '../includes/footer.php';
+  include 'footer.php';
   exit;
 }
 $sql = "SELECT kg.*, u.nama_lengkap as guru, k.nama_kelas as kelas, j.nama_jenis as jenis
@@ -18,7 +18,7 @@ $res = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($res);
 if (!$row) {
   echo '<div class="alert alert-danger">Data tidak ditemukan.</div>';
-  include '../includes/footer.php';
+  include 'footer.php';
   exit;
 }
 ?>
@@ -34,4 +34,4 @@ if (!$row) {
   </div>
 </div>
 
-<?php include '../includes/footer.php'; ?>
+<?php include 'footer.php'; ?>

@@ -1,4 +1,4 @@
-<?php include '../koneksi.php'; ?>
+<?php include 'koneksi.php'; ?>
 <?php
 $id = intval($_GET['id'] ?? 0);
 if ($id) {
