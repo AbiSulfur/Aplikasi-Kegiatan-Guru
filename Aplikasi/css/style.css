@@ -1,4 +1,0 @@
-body { background: #f8f9fa; }
-aside { position: fixed; left:0; top:56px; bottom:0; width:220px; }
-main { margin-left:220px; padding-top:20px; }
-.vh-100 { height: calc(100vh - 56px); }
