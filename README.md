@@ -55,22 +55,22 @@ Dokumentasi teknis mengenai arsitektur dan alur kerja sistem dapat ditemukan di 
 ### 📕 Use Case Diagram
 Diagram ini menggambarkan interaksi antara pengguna (aktor) dan sistem.
 
-![Use-Case](Use_Case_Aplikasi_Guru.drawio.png)
+![Use-Case](Aplikasi/Diagram/Use_Case_Aplikasi_Guru.drawio.png)
 
 ### 📐 ERD (Entity Relationship Diagram)
 Diagram ini menjelaskan struktur dan relasi antar tabel dalam database.
 
-![ERD](Basis_Data_App_Kegiatan_Guru.png)
+![ERD](Aplikasi/Diagram/Basis_Data_App_Kegiatan_Guru.png)
 
 ### 🔁 Flowchart Aplikasi
 Flowchart ini mengilustrasikan alur kerja proses utama dalam aplikasi.
 
-![Flowchart](Flowchart_Aplikasi_Guru.drawio.png)
+![Flowchart](Aplikasi/Diagram/Flowchart_Aplikasi_Guru(PNG).drawio.png)
 
 ### 📚 Activity Diagram
 Diagram ini merincikan alur aktivitas spesifik yang terjadi dalam sistem.
 
-![Activity](Activity_Diagram_Aplikasi_Guru.drawio.png)
+![Activity](Aplikasi/Diagram/Activity_Diagram_Aplikasi_Guru.drawio.png)
 
 ---
 
